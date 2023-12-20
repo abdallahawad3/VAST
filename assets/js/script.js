@@ -3,6 +3,13 @@ let navbar = document.querySelector(".navbar");
 let scrollUp = document.querySelector(".scroll-up");
 menu.addEventListener("click", () => {
   navbar.classList.toggle("active");
+  let links = document.querySelectorAll(".navbar a");
+
+  links.forEach((element) => {
+    element.addEventListener("click", () => {
+      navbar.classList.remove("active");
+    });
+  });
 });
 
 window.addEventListener("scroll", () => {
